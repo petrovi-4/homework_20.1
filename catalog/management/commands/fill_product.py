@@ -10,7 +10,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         Product.objects.all().delete()
 
-        with open('catalog_data.json', encoding='cp1251') as file:
+        with open('catalog_data.json') as file:
             list_of_fixture = json.load(file)
             list_product = []
             for item in list_of_fixture:
