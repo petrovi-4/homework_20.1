@@ -6,7 +6,7 @@ from catalog.models import Product
 def index(request):
     context = {
         'title': 'skystore',
-        'products': Product.objects.all()[:5]
+        'products': Product.objects.all().order_by('-id')[:5]
     }
     print(context['products'])
     return render(request, 'catalog/home.html', context=context)
